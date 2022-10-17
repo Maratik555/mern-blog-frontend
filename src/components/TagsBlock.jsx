@@ -21,6 +21,7 @@ export const TagsBlock = ({ items, isLoading = true }) => {
             href={`/tags`}
           
           >
+            
             <ListItem key={i} disablePadding>
               <ListItemButton>
                 <ListItemIcon>

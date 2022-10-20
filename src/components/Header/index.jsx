@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import Button from '@mui/material/Button'
-
 import styles from './Header.module.scss'
 import Container from '@mui/material/Container'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout, selectIsAuth } from '../../redux/slice/auth'
 
 export const Header = () => {
+  const data = useSelector(state => state.auth?.data)
   const dispatch = useDispatch()
   let isAuth = useSelector(selectIsAuth)
   
@@ -26,6 +26,7 @@ export const Header = () => {
           <Link className={styles.logo} to="/">
             <div>Maratik555 BLOG MERN💻</div>
           </Link>
+          <div className={styles.login}>{data?.fullName}</div>
           <div className={styles.buttons}>
             {isAuth ? (
               <>
